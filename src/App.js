@@ -8,17 +8,15 @@ import Projects from './components/Projects';
 
 function App() {
   return (
-    <Router>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="projects" element={<Projects />} />
-         </Route>
-      </Routes>
-    </Router>
-    
+    <Routes>
+      <Route path="rehan-parwani-website/" element={<Layout />}>
+        <Route path="home" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="projects" element={<Projects />} />
+      </Route>
+    </Routes>
+
   );
 }
 
