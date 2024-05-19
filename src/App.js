@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout'
 import Home from './components/Home';
 import './App.scss';
@@ -8,7 +8,7 @@ import Projects from './components/Projects';
 
 function App() {
   return (
-    <>
+    <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -17,7 +17,7 @@ function App() {
             <Route path="projects" element={<Projects />} />
          </Route>
       </Routes>
-    </>
+    </Router>
     
   );
 }
