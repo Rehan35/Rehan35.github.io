@@ -1,6 +1,6 @@
 {
-  "name": "react-portfolio",
   "homepage": "https://Rehan35.github.io/rehan-parwani-website",
+  "name": "react-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
