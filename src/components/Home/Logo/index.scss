@@ -1,0 +1,13 @@
+.logo-container {
+    z-index: 0;
+    width: 400px;
+    height: 700px;
+    position: absolute;
+    top: 0;
+    right: 25%;
+    bottom: 0;
+    left: auto;
+    margin: auto;
+    animation: rotateIn 2.5s 4s backwards;
+
+}
