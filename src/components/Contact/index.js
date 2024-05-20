@@ -30,7 +30,7 @@ const Contact = () => {
         )
         .then(
             () => {
-                toast.success("Message sent successfully");
+                toast.success("Message Sent!");
             },
             (error) => {
                 // alert("Failed to send message, please try again");
