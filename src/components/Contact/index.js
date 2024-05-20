@@ -4,6 +4,7 @@ import AnimatedLetters from '../AnimatedLetters';
 import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import RehanLogo from '../../assets/images/Rehan-Logo.png'
+import { Toaster, toast } from 'sonner'
 
 const Contact = () => {
 
@@ -29,11 +30,11 @@ const Contact = () => {
         )
         .then(
             () => {
-                alert("Message sent successfully");
-                window.location.reload(false);
+                toast.success("Message sent successfully");
             },
             (error) => {
-                alert("Failed to send message, please try again");
+                // alert("Failed to send message, please try again");
+                toast.error("Message failed to send");
             }
         )
     }
@@ -41,6 +42,7 @@ const Contact = () => {
     return(
         <>
             <div className="container contact-page">
+                <Toaster richColors expand={true} position="top-center"/>
                 <div className='text-zone'>
                     <h1>
                         <AnimatedLetters 

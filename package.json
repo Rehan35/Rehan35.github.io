@@ -26,6 +26,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.69.5",
     "serve": "^14.2.3",
+    "sonner": "^1.4.41",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
