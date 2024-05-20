@@ -13,14 +13,14 @@ const Sidebar = () => (
             <img className="sub-logo" src={LogoSubtitle} alt="rehan" />
         </Link>
         <nav>
-            <NavLink exact="true" activeclassname="active" to="/rehan-parwani-website/home">
+            <NavLink exact="true" activeclassname="active" to="/home">
                 <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
             </NavLink>
             <NavLink 
                 exact="true" 
                 activeclassname="active"
                 className="about-link" 
-                to="/rehan-parwani-website/about"
+                to="/about"
             >
                 <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
             </NavLink>
@@ -28,7 +28,7 @@ const Sidebar = () => (
                 exact="true" 
                 activeclassname="active" 
                 className="contact-link" 
-                to="/rehan-parwani-website/contact"
+                to="/contact"
             >
                 <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
             </NavLink>
@@ -36,7 +36,7 @@ const Sidebar = () => (
                 exact="true" 
                 activeclassname="active" 
                 className="projects-link" 
-                to="/rehan-parwani-website/projects"
+                to="/projects"
             >
                 <FontAwesomeIcon icon={faProjectDiagram} color="#4d4d4e" />
             </NavLink>
