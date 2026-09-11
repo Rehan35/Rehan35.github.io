@@ -4,12 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import Avatar from '../Avatar';
+import headshot from '../../assets/images/headshot.jpeg';
 
 const Home = () => {
     return (
         <section className="hero">
             <div className="hero-inner animate-slide-up">
-                <Avatar size={148} badge="3" />
+                <Avatar src={headshot} size={148} badge="3" />
                 <p className="hero-eyebrow">Hi, my name is</p>
                 <h1 className="hero-name gradient-text glow-text">Rehan Parwani</h1>
                 <h2 className="hero-tagline">AI Researcher &amp; CS Student @ Georgia Tech</h2>

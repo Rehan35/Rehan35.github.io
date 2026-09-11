@@ -1,5 +1,6 @@
 import './index.scss';
 import Avatar from '../Avatar';
+import headshot from '../../assets/images/headshot.jpeg';
 
 const lineup = [
     { number: '01', skill: 'Python' },
@@ -20,7 +21,7 @@ const About = () => {
             </h1>
 
             <div className="about-header">
-                <Avatar size={128} badge="3" />
+                <Avatar src={headshot} size={128} badge="3" />
                 <div className="about-header-facts">
                     <span className="pill">Georgia Tech &apos;27</span>
                     <span className="pill">3.94 GPA</span>
