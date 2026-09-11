@@ -1,75 +1,78 @@
-import './index.scss'
-import AnimatedLetters from "../AnimatedLetters";
-import { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCss3, faHtml5, faJava, faPython, faReact, faSwift } from '@fortawesome/free-brands-svg-icons';
-import Loader from 'react-loaders';
+import './index.scss';
+import Avatar from '../Avatar';
+
+const lineup = [
+    { number: '01', skill: 'Python' },
+    { number: '23', skill: 'PyTorch' },
+    { number: '07', skill: 'Java' },
+    { number: '11', skill: 'TypeScript' },
+    { number: '03', skill: 'React' },
+    { number: '18', skill: 'GraphQL' },
+    { number: '04', skill: 'Swift' },
+    { number: '99', skill: 'CUDA / Slurm' },
+];
 
 const About = () => {
-    const [letterClass, setLetterClass] = useState('text-animate')
-
-    useEffect(() => {
-        setTimeout(() => {
-            setLetterClass('text-animate-hover')
-        }, 3000)
-    }, [])
-
     return (
-        <>
-            <div className='container about-page'>
-                <div className="text-zone">
-                    <h1>
-                    <AnimatedLetters 
-                        letterClass={letterClass}
-                        strArray={['A','b','o','u','t',' ','m','e']}
-                        idx={15}
-                    />
-                    </h1>
-                    <p>
-                        I am a very ambitious developer looking for a role at a company with the opportunity
-                        to work with some of the brightests minds to push the frontiers of the applications of Artificial Intelligence
-                        and Machine Learning and also work on challenging and diverse projects in the multiple different spaces of development.
-                    </p>
-                    <p>
-                        I currently have experience in App Development along with Backend development and implementation of different AI and Machine Learning models. 
-                        I am always looking to improve upon my experience and collaborate with others to not only extend my knowledge of the computer science world,
-                        but also update my current projects and develop on new projects.
-                    </p>
-                    <p>
-                        I am a meticulous and analytical being who loves to use the world around him as his canvas and apply his experiences into the world of CS. 
-                        As someone who loves basketball and sports in general, I am always looking for ways to use my love for different mediums and blend them into one.
-                    </p>
-                    <p>
-                        If I were to define myself in one sentence that would be a kind and caring individual who can be compettive when it comes to sports 
-                        but at the end of the day is passionate about each project he chooses to tackle.
-                    </p>
-                </div>
-                <div className="stage-cube-cont">
-                    <div className="cubespinner">
-                        <div className="face1">
-                            <FontAwesomeIcon icon={faHtml5} color="#F06529" />
-                        </div>
-                        <div className="face2">
-                            <FontAwesomeIcon icon={faJava} color="#5382A1" />
-                        </div>
-                        <div className="face3">
-                            <FontAwesomeIcon icon={faPython} color="#306998" />
-                        </div>
-                        <div className="face4">
-                            <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
-                        </div>
-                        <div className="face5">
-                            <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
-                        </div>
-                        <div className="face6">
-                            <FontAwesomeIcon icon={faSwift} color="#FF4F00" />
-                        </div>
-                    </div>
+        <section className="about-page container">
+            <h1 className="section-heading">
+                <span className="index">01.</span> About Me
+            </h1>
+
+            <div className="about-header">
+                <Avatar size={128} badge="3" />
+                <div className="about-header-facts">
+                    <span className="pill">Georgia Tech &apos;27</span>
+                    <span className="pill">3.94 GPA</span>
+                    <span className="pill">GT Club Basketball — Treasurer</span>
                 </div>
             </div>
-            <Loader type="cube-transition"/>
-        </>
-    )
-}
+
+            <div className="glass-card about-card">
+                <svg className="backboard-watermark" viewBox="0 0 120 90" aria-hidden="true">
+                    <rect x="6" y="6" width="70" height="48" rx="2" />
+                    <ellipse cx="41" cy="58" rx="30" ry="7" />
+                </svg>
+
+                <p>
+                    I'm a Computer Science student at <strong>Georgia Tech</strong> (Intelligence &amp; Information
+                    Internetworking threads, 3.94 GPA, Dean's List) working on{' '}
+                    <strong>mechanistic interpretability</strong> &mdash; localizing where and how language
+                    models compute behavior internally, using activation steering, layer attribution, and
+                    attribution patching to find the mechanisms behind a persona or role. That work feeds into
+                    broader questions of <strong>alignment</strong> and <strong>training-data attribution</strong>,
+                    published at the COLM 2026 workshops and ongoing across several lead-author position papers
+                    and experiments.
+                </p>
+                <p>
+                    Alongside research, I've built production systems as a software engineering intern at{' '}
+                    <strong>Google</strong>, <strong>Databricks</strong>, and <strong>Airbnb</strong>, which keeps
+                    my research grounded in how these systems actually get built and deployed at scale.
+                </p>
+                <p>
+                    Outside of research and engineering, I serve as a <strong>Discrete Math Teaching Assistant</strong>{' '}
+                    and <strong>Treasurer for Georgia Tech Club Basketball</strong>. I'm a meticulous and
+                    analytical person who treats the world as a canvas for experimentation &mdash; whether that's
+                    a training run or a pickup game.
+                </p>
+                <p>
+                    If I were to define myself in one sentence: a kind and curious person who is competitive
+                    about the things he cares about, but is ultimately passionate about the process of figuring
+                    out why something works.
+                </p>
+            </div>
+
+            <h3 className="skills-heading">Starting Lineup</h3>
+            <div className="skills-grid">
+                {lineup.map(({ number, skill }) => (
+                    <span key={skill} className="jersey-pill">
+                        <span className="jersey-number">{number}</span>
+                        {skill}
+                    </span>
+                ))}
+            </div>
+        </section>
+    );
+};
 
 export default About;

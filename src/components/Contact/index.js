@@ -1,93 +1,70 @@
 import './index.scss';
-import Loader from 'react-loaders';
-import AnimatedLetters from '../AnimatedLetters';
-import React, { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import RehanLogo from '../../assets/images/Rehan-Logo.png'
-import { Toaster, toast } from 'sonner'
+import { Toaster, toast } from 'sonner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 const Contact = () => {
-
-    const [letterClass, setLetterClass] = useState('text-animate')
-    const refForm = useRef()
-
-    useEffect(() => {
-        setTimeout(() => {
-            setLetterClass('text-animate-hover')
-        }, 3000)
-    }, [])
+    const refForm = useRef();
 
     const sendEmail = (e) => {
-        console.log("REACHED HERE");
         e.preventDefault();
 
         emailjs
-        .sendForm(
-            'service_614uoi4',
-            'template_g97l0gg',
-            refForm.current,
-            'exKyvjc5MhveUfwf4'
-        )
-        .then(
-            () => {
-                toast.success("Message Sent!");
-            },
-            (error) => {
-                // alert("Failed to send message, please try again");
-                toast.error("Message failed to send");
-            }
-        )
-    }
+            .sendForm('service_614uoi4', 'template_g97l0gg', refForm.current, 'exKyvjc5MhveUfwf4')
+            .then(
+                () => {
+                    toast.success('Message Sent!');
+                    refForm.current.reset();
+                },
+                () => {
+                    toast.error('Message failed to send');
+                }
+            );
+    };
 
-    return(
-        <>
-            <div className="container contact-page">
-                <Toaster richColors expand={true} position="top-center"/>
-                <div className='text-zone'>
-                    <h1>
-                        <AnimatedLetters 
-                        letterClass={letterClass}
-                        strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'M', 'e']}
-                        idx={15}
-                        />
-                    </h1>
-                    <p>
-                        I am interested in internship and research opportunities
-                        in the fields of AI, ML, and Backend and Frontend Development.
-                        If you have any opportunities, questions, or requests, please feel
-                        free to reach out.
-                    </p>
-                    <div className='contact-form'>
-                        <form ref={refForm} onSubmit={sendEmail}>
-                            <ul>
-                                <li className='half'>
-                                    <input type="text" name="name" placeholder='Name' required />
-                                </li>
-                                <li className='half2'>
-                                    <input type="text" name="email" placeholder='Email' required />
-                                </li>
-                                <li>
-                                    <input type="text" name="subject" placeholder='Subject' required />
-                                </li>
-                                <li>
-                                    <textarea placeholder="message" name="message" required>
+    return (
+        <section className="contact-page container">
+            <Toaster richColors expand={true} position="top-center" />
+            <h1 className="section-heading">
+                <span className="index">05.</span> Get In Touch
+            </h1>
 
-                                    </textarea>
-                                </li>
-                                <li>
-                                    <input type='submit' className='flat-button' value='SEND' />
-                                </li>
-                            </ul>
-                        </form>
+            <div className="glass-card contact-card">
+                <p className="contact-intro">
+                    I am interested in research collaborations and opportunities in AI alignment, data
+                    attribution, and language models, as well as software engineering roles. If you have any
+                    opportunities, questions, or requests, please feel free to reach out.
+                </p>
+
+                <form ref={refForm} onSubmit={sendEmail} className="contact-form">
+                    <div className="contact-form-row">
+                        <input type="text" name="name" placeholder="Name" required />
+                        <input type="email" name="email" placeholder="Email" required />
                     </div>
-                </div>
-                <div className='logo-container'>
-                <img className='Rehan-Logo' src={RehanLogo} alt="S"/>
+                    <input type="text" name="subject" placeholder="Subject" required />
+                    <textarea name="message" placeholder="Message" required />
+                    <button type="submit" className="btn-neon primary">
+                        Send Message
+                    </button>
+                </form>
+
+                <div className="contact-socials">
+                    <a className="icon-btn" href="mailto:rehanparwani@gmail.com" aria-label="Email">
+                        <FontAwesomeIcon icon={faEnvelope} />
+                    </a>
+                    <a className="icon-btn" href="https://www.github.com/rehan35" target="_blank" rel="noreferrer" aria-label="GitHub">
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                    <a className="icon-btn" href="https://www.linkedin.com/in/rehan-parwani" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                        <FontAwesomeIcon icon={faLinkedinIn} />
+                    </a>
                 </div>
             </div>
-            <Loader type='cube-transition'/>
-        </>
-    )
-}
+        </section>
+    );
+};
 
 export default Contact;

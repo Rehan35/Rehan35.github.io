@@ -1,0 +1,70 @@
+.hoop-scene-wrap {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.hoop-scene {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hoop-ball {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: shoot 3.4s cubic-bezier(0.35, 0.05, 0.4, 1) infinite;
+}
+
+.hoop-net {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: swish 3.4s ease-in-out infinite;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate(8px, 120px) scale(1);
+    opacity: 1;
+  }
+  8% {
+    opacity: 1;
+  }
+  45% {
+    transform: translate(140px, 6px) scale(0.95);
+  }
+  66% {
+    transform: translate(228px, 26px) scale(0.86);
+  }
+  76% {
+    transform: translate(250px, 45px) scale(0.8);
+  }
+  88% {
+    transform: translate(250px, 82px) scale(0.74);
+    opacity: 1;
+  }
+  94% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(8px, 120px) scale(1);
+  }
+}
+
+@keyframes swish {
+  0%,
+  72% {
+    transform: skewX(0deg);
+  }
+  78% {
+    transform: skewX(-7deg);
+  }
+  84% {
+    transform: skewX(6deg);
+  }
+  90%,
+  100% {
+    transform: skewX(0deg);
+  }
+}

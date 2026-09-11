@@ -1,0 +1,16 @@
+.vinyl {
+  width: var(--vinyl-size);
+  height: var(--vinyl-size);
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.18));
+}
+
+.vinyl-spin svg {
+  animation: vinyl-rotate var(--vinyl-speed) linear infinite;
+}
+
+@keyframes vinyl-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

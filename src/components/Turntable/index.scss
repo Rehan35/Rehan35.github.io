@@ -1,0 +1,130 @@
+.turntable {
+  width: 100%;
+  max-width: 38rem;
+  margin: 0 auto;
+}
+
+.turntable-body {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  padding: 8%;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+}
+
+.turntable-platter {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle at center,
+    #0c0c14 0px,
+    #0c0c14 3px,
+    #17171f 4px,
+    #17171f 5px
+  );
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.06), 0 0 40px -12px rgba(0, 217, 255, 0.35),
+    0 10px 30px rgba(0, 0, 0, 0.5);
+  transform-origin: 50% 50%;
+}
+
+.turntable-platter.spin {
+  animation: platter-spin 5.5s linear infinite;
+}
+
+.turntable-platter.paused {
+  animation: none;
+}
+
+@keyframes platter-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.platter-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 42%;
+  height: 42%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 1px rgba(0, 217, 255, 0.5), 0 0 24px -4px rgba(0, 217, 255, 0.6);
+  animation: label-fade-in 0.4s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@keyframes label-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.platter-spindle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.6%;
+  height: 1.6%;
+  min-width: 6px;
+  min-height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.8);
+}
+
+.turntable-arm {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  width: 46%;
+  height: 46%;
+  transform: rotate(var(--arm-angle, -12deg));
+  transform-origin: 88% 8%;
+  transition: transform 0.6s ease;
+}
+
+.arm-base {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 14%;
+  height: 14%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #2a2a36, #0f0f16);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.arm-rod {
+  position: absolute;
+  top: 6%;
+  right: 7%;
+  width: 3px;
+  height: 92%;
+  background: linear-gradient(180deg, #d8d8e2, #8a8a9a);
+  border-radius: 2px;
+}
+
+.arm-head {
+  position: absolute;
+  bottom: -0.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1rem;
+  height: 0.6rem;
+  border-radius: 0.2rem;
+  background: var(--secondary);
+  box-shadow: 0 0 10px rgba(123, 97, 255, 0.7);
+}

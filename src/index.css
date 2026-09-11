@@ -2,30 +2,44 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --background: #0a0a14;
+  --background-alt: #1a0a2e;
+  --foreground: #ffffff;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --muted-foreground: #c2c2d6;
+  --primary: #00d9ff;
+  --secondary: #7b61ff;
+  --accent: #ff3d71;
+  --neon-green: #00ff9d;
+  --radius: 0.9rem;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
 body {
   margin: 0;
-  /* font: 300 11px/1.4 'Helvetica Neue'; */
-  color: #444;
-  background: #6082B6;
-  overflow: hidden;
-  display: block;
+  color: var(--foreground);
+  background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
 }
 
 @import 'animate.css';
-
-@font-face {
-  font-family: 'Helvetica-Neue';
-  src: url('./assets/fonts/helvetica-neu.ttf');
-}
-
-@font-face {
-  font-family: 'La Belle Aurore';
-  src: url('./assets/fonts/labelleaurore-regular-webfont.woff2');
-}
-
-@font-face {
-  font-family: 'Coolvetica';
-  src: url('./assets/fonts/CoolveticaRg-Regular.woff2');
-}

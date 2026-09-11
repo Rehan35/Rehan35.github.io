@@ -1,0 +1,29 @@
+.experience-page {
+  max-width: 90rem;
+}
+
+.experience-page .hoop-scene-wrap {
+  margin-bottom: 3.2rem;
+}
+
+.entry-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.logo-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--logo-color) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--logo-color) 45%, transparent);
+  color: var(--logo-color);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.8rem;
+}
