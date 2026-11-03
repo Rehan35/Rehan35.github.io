@@ -3,6 +3,19 @@ import VinylRecord from '../VinylRecord';
 
 const publications = [
     {
+        title: 'Adaptive Multi-Token Prediction: How far should we go?',
+        authors: [
+            'Emile Anand',
+            'Mohammed Rehan Parwani',
+            'Xinyuan Cao',
+        ],
+        venue: 'arXiv preprint, 2026',
+        arxiv: 'https://arxiv.org/abs/2610.28619',
+        arxivId: 'arXiv:2610.28619',
+        hasOpenReview: false,
+        topics: ['LM Pretraining'],
+    },
+    {
         title: 'Role Steering of Language Models for Social Simulations',
         authors: [
             'Isaac Song*',
@@ -47,6 +60,18 @@ const publications = [
 ];
 
 const ongoingWork = [
+    {
+        title: 'Algoverse Research Program',
+        org: 'Algoverse',
+        location: 'San Francisco, CA',
+        dates: 'Sept. 2026 – Present',
+        topics: ['Mechanistic Interpretability', 'Alignment'],
+        bullets: [
+            'Investigating Model Predictive Control (MPC) for inference-time alignment of vision-language models, framing response generation as a control problem over layer-wise activation trajectories to suppress failure modes such as hallucination and sycophancy.',
+            'Developing a component-level steering framework that extends activation-space control from whole layers to individual circuits and components, constraining them to remain within learned "aligned" latent regions or away from misaligned ones.',
+            'Designing latent representations of intended vs. undesired behavior and evaluating the trade-off between steering precision and computational cost, with the goal of targeted interventions that don\'t degrade general VLM capability.',
+        ],
+    },
     {
         title: 'Data Attribution Should Steer Pretraining',
         org: 'Entertainment Intelligence and Human-Centered AI Lab',
